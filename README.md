@@ -19,7 +19,7 @@
 
 ### ✅ Requirements
 
-- C++17 compatible compiler
+- C++20 compatible compiler
 - CMake ≥ 3.14
 - Git (for cloning submodules or fetching dependencies)
 
