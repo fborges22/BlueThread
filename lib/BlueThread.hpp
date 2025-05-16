@@ -26,6 +26,9 @@ public:
     bool isRunning() const;
     bool shouldStop() const;
 
+    double getThreadCpuTime();    // in seconds
+    size_t getThreadMemoryUsage(); // in kilobytes
+
 private:
     std::thread thread;
     std::atomic<bool> running;
