@@ -93,7 +93,7 @@ size_t BlueThread::getThreadMemoryUsage() {
 #endif
 
 #ifdef _WIN32
-double BlueThread::getThreadCpuTime() const {
+double BlueThread::getThreadCpuTime() {
     if (!thread.joinable()) return 0.0;
 
     FILETIME creationTime, exitTime, kernelTime, userTime;
@@ -108,7 +108,7 @@ double BlueThread::getThreadCpuTime() const {
     return 0.0;
 }
 
-size_t BlueThread::getThreadMemoryUsage() const {
+size_t BlueThread::getThreadMemoryUsage() {
     PROCESS_MEMORY_COUNTERS pmc;
     if (GetProcessMemoryInfo(GetCurrentProcess(), &pmc, sizeof(pmc))) {
         return pmc.WorkingSetSize / 1024;
